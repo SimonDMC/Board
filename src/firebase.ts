@@ -25,7 +25,7 @@ export async function write(path: string, data: any) {
 		await set(ref(db, path), data);
 	} catch (error) {
 		await auth.signOut();
-		window.location.href = './unauthorized';
+		window.location.href = '../unauthorized';
 	}
 }
 
