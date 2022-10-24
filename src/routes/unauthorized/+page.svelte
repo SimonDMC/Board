@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Thoughts | Unauthorized</title>
+	<title>Board | Unauthorized</title>
 </svelte:head>
 
 <body>

@@ -65,5 +65,9 @@ export const login = () => {
 
 // logout
 export const logout = async () => {
+	const logInButton = document.querySelector('#login');
+	if (logInButton) {
+		logInButton.classList.remove('success');
+	}
 	await auth.signOut();
 };
