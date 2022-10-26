@@ -1,5 +1,3 @@
-import { read } from './firebase';
-
 // https://stackoverflow.com/a/6691294
 export const pasteHtmlAtCaret = (html: any) => {
 	let sel, range;

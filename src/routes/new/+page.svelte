@@ -53,6 +53,9 @@
 		// all checks passed, create board
 		displayNotification('Creating board...');
 		await createBoardDb(boardName.toLowerCase());
+
+		// wait 1 second to make sure board is created
+		await new Promise((resolve) => setTimeout(resolve, 1000));
 		window.location.href = './' + boardName;
 	}
 
