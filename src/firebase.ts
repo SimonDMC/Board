@@ -25,6 +25,7 @@ export async function write(path: string, data: any) {
 		await set(ref(db, path), data);
 	} catch (error) {
 		await auth.signOut();
+		console.log(error);
 		window.location.href = '../unauthorized';
 	}
 }
@@ -54,10 +55,11 @@ export const login = () => {
 	signInWithPopup(auth, provider).then(async (result) => {
 		// get user from signin
 		const user = result.user;
-		// set as non-admin unless they are already set as anything
+		// set as non-admin and null board unless they are already set as anything
 		if (!(await exists('users/' + user.uid))) {
-			await write('users/' + user.uid, {
-				admin: false
+			write('users/' + user.uid, {
+				admin: false,
+				board: 'null'
 			});
 		}
 	});
@@ -70,4 +72,18 @@ export const logout = async () => {
 		logInButton.classList.remove('success');
 	}
 	await auth.signOut();
+};
+
+export const createBoardDb = async (boardName: string) => {
+	try {
+		await write(`users/${auth.currentUser?.uid}/board`, boardName);
+		await write(`taken/${boardName}`, true);
+		await write(
+			'boards/' + boardName,
+			"This is your board!<br><br>Let the world know what you're up to by accessing the Admin Panel."
+		);
+	} catch (error) {
+		await auth.signOut();
+		window.location.href = '../unauthorized';
+	}
 };

@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { db } from '../../firebase';
+	import { db, read } from '../../firebase';
 	import { onValue, ref } from 'firebase/database';
-	import { dbListContainsValue } from '../../utils';
 	import { onMount } from 'svelte';
 	import '../../app.css';
 
@@ -10,7 +9,14 @@
 
 	onMount(async () => {
 		// check if the page exists
-		let valid: boolean = await dbListContainsValue('taken', dir);
+		let valid: boolean;
+
+		try {
+			valid = (await read(`taken/${dir}`)) as boolean;
+		} catch (e) {
+			window.location.href = '../404';
+			return;
+		}
 
 		if (!valid) {
 			window.location.href = '../404';

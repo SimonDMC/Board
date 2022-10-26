@@ -1,12 +1,5 @@
 import { read } from './firebase';
 
-export const dbListContainsValue = async (path: string, value: any) => {
-	const list = await read(path);
-	console.log(list);
-
-	return list.includes(value);
-};
-
 // https://stackoverflow.com/a/6691294
 export const pasteHtmlAtCaret = (html: any) => {
 	let sel, range;

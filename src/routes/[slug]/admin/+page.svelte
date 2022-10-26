@@ -2,7 +2,7 @@
 	import { login, logout, read, write, auth } from '../../../firebase.js';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { dbListContainsValue, pasteHtmlAtCaret } from '../../../utils';
+	import { pasteHtmlAtCaret } from '../../../utils';
 	import '../../../app.css';
 
 	const dir = $page.params.slug.toLowerCase();
@@ -14,7 +14,14 @@
 		input.classList.add('loading');
 
 		// check if the page exists
-		let valid: boolean = await dbListContainsValue('taken', dir);
+		let valid: boolean;
+
+		try {
+			valid = (await read(`taken/${dir}`)) as boolean;
+		} catch (e) {
+			window.location.href = '../404';
+			return;
+		}
 
 		if (!valid) {
 			window.location.href = '../404';
