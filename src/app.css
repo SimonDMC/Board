@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 body {
@@ -11,9 +12,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 100vh;
     min-width: 100vw;
-    background-color: blueviolet;
+    background-color: #8a2be2;
     color: white;
     font-family: 'Inter', sans-serif;
     font-weight: 500;

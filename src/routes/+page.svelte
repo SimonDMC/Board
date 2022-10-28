@@ -58,15 +58,15 @@
 	}
 
 	button {
-		font-size: 2.3em;
-		padding: 1em;
+		font-size: 2.8em;
+		padding: 1em 1.3em;
 		border-radius: 50em;
 		border: none;
 		background-color: white;
 		box-shadow: inset 0 0 10px #000000bb;
 		text-shadow: 0 0 5px #00000044;
 		cursor: pointer;
-		margin: 2em 0;
+		margin: 1.5em 0;
 		transition: transform 0.1s;
 	}
 

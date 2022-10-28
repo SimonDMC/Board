@@ -73,6 +73,13 @@
 			// enable typing and disable the loading indicator
 			input.contentEditable = 'true';
 		}
+
+		// add editor paste listener
+		input.addEventListener('paste', (e: ClipboardEvent) => {
+			e.preventDefault();
+			const text = e.clipboardData?.getData('text/plain');
+			document.execCommand('insertHTML', false, text);
+		});
 	});
 
 	function checkEnterPress(e: KeyboardEvent) {
@@ -91,8 +98,7 @@
 		if (loginButton) {
 			if (loginButton.classList.contains('success')) {
 				logout();
-				loginButton.classList.remove('success');
-				loginButton.innerHTML = 'Log In';
+				window.location.href = '../';
 			} else {
 				login();
 			}
@@ -114,15 +120,18 @@
 
 <body>
 	<button id="login" on:click={toggleLogin}>Log In</button>
-	<div
-		style={inputText == '' || inputText == '<br>' ? 'line-height: 60vh;' : ''}
-		id="input"
-		class={inputText.replace(/<br>/g, '') == '' ? 'empty' : ''}
-		contenteditable="false"
-		bind:innerHTML={inputText}
-		on:keydown={checkEnterPress}
-	/>
+	<div class="wrapper">
+		<div
+			style={inputText == '' || inputText == '<br>' ? 'line-height: 60vh;' : ''}
+			id="input"
+			class={inputText.replace(/<br>/g, '') == '' ? 'empty' : ''}
+			contenteditable="false"
+			bind:innerHTML={inputText}
+			on:keydown={checkEnterPress}
+		/>
+	</div>
 	<button class="share" on:click={copyLink}>Share Link</button>
+	<a href="./" class="back">Back</a>
 </body>
 
 <style>
@@ -151,23 +160,36 @@
 	}
 
 	#input {
-		margin-top: 8vh;
 		color: black;
 		border: none;
 		outline: none;
-		background-color: white;
 		font-size: 2.3em;
 		font-family: 'Inter', sans-serif;
 		text-align: center;
-		width: 60vw;
-		height: 60vh;
-		border-radius: 1em;
-		box-shadow: inset 0 0 10px #000000bb;
 		font-weight: 500;
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-content: center;
 		justify-content: center;
+		min-height: 100%;
+	}
+
+	.wrapper {
+		margin-top: 8vh;
+		width: 60vw;
+		height: 60vh;
+		overflow-y: scroll;
+		background-color: white;
+		border-radius: 2.3em;
+		box-shadow: inset 0 0 0.6em #000000bb;
+		/* hide scrollbar */
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	.wrapper::-webkit-scrollbar {
+		display: none;
 	}
 
 	:global(#input *) {
@@ -199,5 +221,18 @@
 
 	.share:hover {
 		scale: 1.02;
+	}
+
+	a.back {
+		position: absolute;
+		top: 0.5em;
+		left: 0.5em;
+		color: white;
+		font-family: 'Inter', sans-serif;
+		font-size: 1.5em;
+		text-shadow: 0 0 10px #000000bb;
+		cursor: pointer;
+		text-decoration: none;
+		font-weight: 400;
 	}
 </style>

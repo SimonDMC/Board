@@ -80,7 +80,7 @@ export const createBoardDb = async (boardName: string) => {
 		await write(`taken/${boardName}`, true);
 		await write(
 			'boards/' + boardName,
-			"This is your board!<br><br>Let the world know what you're up to by accessing the Admin Panel."
+			`This is your board, ${boardName}!<br><br>Let the world know what you're up to by accessing the Admin Panel.`
 		);
 	} catch (error) {
 		await auth.signOut();
