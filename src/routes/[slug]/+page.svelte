@@ -50,7 +50,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		min-width: 100vw;
+		width: 100vw;
 		background-color: blueviolet;
 	}
 
@@ -60,14 +60,14 @@
 		font-family: 'Inter', sans-serif;
 		text-align: center;
 		position: relative;
-		text-shadow: 0 0 10px #000000bb;
+		text-shadow: 0 0 0.2em #000000bb;
 		font-weight: 500;
 		word-break: break-word;
 		overflow-y: scroll;
 		/* hide scrollbar */
 		-ms-overflow-style: none;
 		scrollbar-width: none;
-		margin: 1em 0;
+		margin: max(1em, 4.5vh) 0;
 	}
 
 	#main::-webkit-scrollbar {
@@ -81,8 +81,8 @@
 		background-color: transparent;
 		color: white;
 		font-family: 'Inter', sans-serif;
-		font-size: 1.5em;
-		text-shadow: 0 0 10px #000000bb;
+		font-size: max(1.5em, 2.5vh);
+		text-shadow: 0 0 0.3em #000000bb;
 		cursor: pointer;
 		text-decoration: none;
 		font-weight: 400;
@@ -95,8 +95,8 @@
 		background-color: transparent;
 		color: white;
 		font-family: 'Inter', sans-serif;
-		font-size: 1.5em;
-		text-shadow: 0 0 10px #000000bb;
+		font-size: max(1.5em, 2.5vh);
+		text-shadow: 0 0 0.3em #000000bb;
 		cursor: pointer;
 		text-decoration: none;
 		font-weight: 400;

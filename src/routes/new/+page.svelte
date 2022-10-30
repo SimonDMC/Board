@@ -85,7 +85,7 @@
 <style>
 	p {
 		font-size: 3.5em;
-		text-shadow: 0 0 10px #000000bb;
+		text-shadow: 0 0 0.15em #000000bb;
 	}
 
 	input {
@@ -99,7 +99,7 @@
 		background-color: transparent;
 		color: white;
 		font-family: 'Inter', sans-serif;
-		filter: drop-shadow(0 0 8px #000000bb);
+		filter: drop-shadow(0 0 0.12em #000000bb);
 	}
 
 	input::placeholder {
@@ -112,8 +112,8 @@
 		border-radius: 50em;
 		border: none;
 		background-color: white;
-		box-shadow: inset 0 0 10px #000000bb;
-		text-shadow: 0 0 5px #00000044;
+		box-shadow: inset 0 0 0.2em #000000bb;
+		text-shadow: 0 0 0.1em #00000044;
 		cursor: pointer;
 		transition: transform 0.1s;
 	}

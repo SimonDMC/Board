@@ -142,10 +142,10 @@
 		outline: none;
 		font-size: 3em;
 		font-family: 'Inter', sans-serif;
-		padding: 1.5% 3%;
+		padding: 0.6em 1.2em;
 		position: relative;
 		border-radius: 100em;
-		box-shadow: inset 0 0 10px #000000bb;
+		box-shadow: inset 0 0 0.2em #000000bb;
 		cursor: pointer;
 		transition: transform 0.1s, background-color 0.2s ease-in-out;
 		font-weight: 500;
@@ -173,11 +173,12 @@
 		align-content: center;
 		justify-content: center;
 		min-height: 100%;
+		padding: 0.2em 0.5em;
 	}
 
 	.wrapper {
 		margin-top: 8vh;
-		width: 60vw;
+		width: min(90vw, 125vh);
 		height: 60vh;
 		overflow-y: scroll;
 		background-color: white;
@@ -190,10 +191,6 @@
 
 	.wrapper::-webkit-scrollbar {
 		display: none;
-	}
-
-	:global(#input *) {
-		font-size: 2.3rem !important;
 	}
 
 	:global(#input.loading) {
@@ -210,8 +207,8 @@
 		background-color: transparent;
 		color: white;
 		font-family: 'Inter', sans-serif;
-		font-size: 2em;
-		text-shadow: 0 0 10px #000000bb;
+		font-size: max(2em, 3vh);
+		text-shadow: 0 0 0.3em #000000bb;
 		cursor: pointer;
 		font-weight: 400;
 		position: absolute;
@@ -229,8 +226,8 @@
 		left: 0.5em;
 		color: white;
 		font-family: 'Inter', sans-serif;
-		font-size: 1.5em;
-		text-shadow: 0 0 10px #000000bb;
+		font-size: max(1.5em, 2.6vh);
+		text-shadow: 0 0 0.3em #000000bb;
 		cursor: pointer;
 		text-decoration: none;
 		font-weight: 400;

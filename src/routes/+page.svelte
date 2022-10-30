@@ -54,7 +54,7 @@
 <style>
 	p {
 		font-size: 2.8em;
-		text-shadow: 0 0 10px #000000bb;
+		text-shadow: 0 0 0.2em #000000bb;
 	}
 
 	button {
@@ -63,8 +63,8 @@
 		border-radius: 50em;
 		border: none;
 		background-color: white;
-		box-shadow: inset 0 0 10px #000000bb;
-		text-shadow: 0 0 5px #00000044;
+		box-shadow: inset 0 0 0.2em #000000bb;
+		text-shadow: 0 0 0.1em #00000044;
 		cursor: pointer;
 		margin: 1.5em 0;
 		transition: transform 0.1s;

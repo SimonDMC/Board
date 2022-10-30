@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		%sveltekit.head%
-	</head>
-	<body>
-		<div>%sveltekit.body%</div>
-	</body>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+	<meta name="viewport" content="width=device-width" />
+	<!-- Embeds & Meta Tags -->
+	<meta content="Board" property="og:title" />
+	<meta content="Share your thoughts, notes, or anything else by creating your board" property="og:description" />
+	<meta content="Share your thoughts, notes, or anything else by creating your board" name="description">
+	<meta content="https://board.simondmc.com" property="og:url" />
+	<meta content="https://simondmc.com/media/board-hero.png" property="og:image" />
+	<meta content="#8A2BE2" data-react-helmet="true" name="theme-color" />
+	<meta name="twitter:card" content="summary_large_image">
+	<!-- Placeholder Title so that sonarlint doesnt complain -->
+	<title>Board</title>
+	<!-- Manifest -->
+	<link rel="manifest" href="%sveltekit.assets%/manifest.json">
+	%sveltekit.head%
+</head>
+
+<body>
+	<div>%sveltekit.body%</div>
+</body>
+
 </html>

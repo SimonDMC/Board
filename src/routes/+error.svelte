@@ -15,15 +15,16 @@
 <style>
 	img {
 		border-radius: 1em;
-		box-shadow: 0 0 10px #000000bb;
+		box-shadow: 0 0 0.6em #000000bb;
+		width: max(45vh, 30vw);
 	}
 
 	a {
 		background-color: transparent;
 		color: white;
 		font-family: 'Inter', sans-serif;
-		font-size: 2em;
-		text-shadow: 0 0 10px #000000bb;
+		font-size: max(2.2em, 3vh);
+		text-shadow: 0 0 0.3em #000000bb;
 		cursor: pointer;
 		text-decoration: none;
 		font-weight: 400;
