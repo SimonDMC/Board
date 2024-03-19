@@ -6,8 +6,8 @@ Built with [SvelteKit](https://kit.svelte.dev) and deployed on [Vercel](https://
 
 ## Preview
 
-![Board Preview](https://simondmc.com/media/board-hero.png)
-![Board Admin Panel](https://simondmc.com/media/board-hover.png)
+![Board Preview](https://simondmc.com/assets/imgs/covers/websites/board-full.webp)
+![Board Admin Panel](https://simondmc.com/assets/imgs/covers/websites/board-hover-full.webp)
 
 ## Usage
 
